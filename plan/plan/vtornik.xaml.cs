@@ -14,13 +14,22 @@ namespace plan
     {
         public vtornik()
         {
+            Title = "Вторник";
+            BackgroundColor = Color.LightBlue;
             string[] tasks = new string[] { "Встаю", "Кушаю", "Иду на тренировку", "Обедаю", "Гуляю", "Играю в комп", "Ложусь спать" };
             ListView list = new ListView();//список для отображения значений массива
-            Button back = new Button { Text = "Назад", BackgroundColor = Color.SkyBlue };
+            Button back = new Button { Text = "Назад", BackgroundColor = Color.SkyBlue, ImageSource = "nazad.png" };
             back.Clicked += Back_Clicked;
+            Button next = new Button { Text = "Далее", BackgroundColor = Color.SkyBlue, ImageSource = ".png" };
+            next.Clicked += Next_Clicked; ;
             list.ItemsSource = tasks;//данные из массива отображаем в списке
             list.ItemSelected += List_ItemSelected;//инициализируем функцию при клике на пункты списка
-            Content = new StackLayout { Children = { list,back } };//отображаем список на страницу
+            Content = new StackLayout { Children = { list,back,next } };//отображаем список на страницу
+        }
+
+        private async void Next_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new sreda());
         }
 
         private async void Back_Clicked(object sender, EventArgs e)

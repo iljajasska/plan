@@ -14,13 +14,15 @@ namespace plan
         {
             InitializeComponent();
             StackLayout st = new StackLayout();
-            Button pon_btn = new Button { Text = "Понедельник", BackgroundColor=Color.SkyBlue };
-            Button vtor_btn = new Button { Text = "Вторник", BackgroundColor = Color.SkyBlue };
-            Button sred_btn = new Button { Text = "Среда", BackgroundColor = Color.SkyBlue };
-            Button chet_btn = new Button { Text = "Четверг", BackgroundColor = Color.SkyBlue };
-            Button pyat_btn = new Button { Text = "Пятница", BackgroundColor = Color.SkyBlue };
-            Button subb_btn = new Button { Text = "Суббота", BackgroundColor = Color.SkyBlue };
-            Button vos_btn = new Button { Text = "Воскресенье", BackgroundColor = Color.SkyBlue };
+            Title = "Дни недели";
+            BackgroundColor = Color.LightBlue;
+            Button pon_btn = new Button { Text = "Понедельник", BackgroundColor=Color.SkyBlue, ImageSource = "dni.png" };
+            Button vtor_btn = new Button { Text = "Вторник", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
+            Button sred_btn = new Button { Text = "Среда", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
+            Button chet_btn = new Button { Text = "Четверг", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
+            Button pyat_btn = new Button { Text = "Пятница", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
+            Button subb_btn = new Button { Text = "Суббота", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
+            Button vos_btn = new Button { Text = "Воскресенье", BackgroundColor = Color.SkyBlue, ImageSource = "dni.png" };
             pon_btn.Clicked += new EventHandler(Buttons_Clicked);
             vtor_btn.Clicked += new EventHandler(Buttons_Clicked);
             sred_btn.Clicked += new EventHandler(Buttons_Clicked);
@@ -35,6 +37,7 @@ namespace plan
             st.Children.Add(pyat_btn);
             st.Children.Add(subb_btn);
             st.Children.Add(vos_btn);
+
             Content = st;
         }
         private async void Buttons_Clicked(object sender, EventArgs e)
